@@ -1,0 +1,32 @@
+
+.row{
+    
+    font-family: 'Playfair Display', serif;
+   
+
+}
+
+h2{
+    font-family: 'Playfair Display', serif ;
+    font-style: italic;
+    text-align: center;
+}
+
+
+h3,h4{
+    display: inline;
+}
+
+#layout{
+    background: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+    background-blend-mode: screen;
+}
+
+
+ul,li{
+    padding: 30px;
+    list-style-type: upper-roman;
+    list-style-position: inside;
+    text-align: justify;
+    margin-top: 15px;
+}

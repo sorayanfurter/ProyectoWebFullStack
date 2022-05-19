@@ -1,0 +1,30 @@
+#layout{
+    background: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+    background-blend-mode: screen;
+    
+}
+
+h1{
+    font-family: 'Playfair Display', serif ;
+    font-style: italic;
+    text-align: center;
+}
+
+.row{
+    font-family: 'Playfair Display', serif;
+   padding-bottom: 50px;
+    
+   
+}
+
+.parte1, .parte2{
+    display: inline-block;
+    padding: 20px;
+    text-align: justify;
+    vertical-align: middle ;
+    
+}
+
+
+
+
