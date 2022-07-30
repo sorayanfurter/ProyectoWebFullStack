@@ -48,51 +48,7 @@ import org.springframework.stereotype.Service;
         return iskillRepository.existsByNombreSkill(nombreSkill);
     } 
 
-    /*
-    public List<Skill> findAll() {
-        
-       return iskillRepository.findAll()       
- 
-				        
-    }
    
-    @Override
-    public SkillDTO saveSkill(SkillDTO skilldto) {
-        Skill skill = mapperSkillDTO.convertToEntity(skilldto);
-        skill = iskillRepository.save(skill);
-        return mapperSkillDTO.convertToDto(skill);
-     } 
-
-    @Override
-    public void deleteSkill(Long id) {
-        iskillRepository.deleteById(id);
-    }
-    
-    @Override
-    public SkillDTO findByIdSkill(Long id){
-          Skill skill = this.iskillRepository.findById(id).get();
-        
-		return mapperSkillDTO.convertToDto(skill);
-    }
-    
-    @Override
-    public SkillDTO updateSkill (SkillDTO skilldto, Long idSkill){
-       
-	return iskillRepository.findById(idSkill).map(skill -> {
-	 skill.setNombreSkill(skilldto.getNombreSkill());
-         skill.setImgSkill(skilldto.getImgSkill());
-         skill.setPorcentajeSkill(skilldto.getPorcentajeSkill());
-         
-                
-	return mapperSkillDTO.convertToDto(iskillRepository.save(skill));
-         
-       }).orElseGet(() -> {
-           Skill newSkill = mapperSkillDTO.convertToEntity(skilldto);
-           newSkill.setIdSkill(idSkill);
-           return mapperSkillDTO.convertToDto(this.iskillRepository.save(newSkill));
-       });
-    } */
-    
    
 }
 

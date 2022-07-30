@@ -14,7 +14,6 @@ public class ImpExperienciaService {
 
     @Autowired
     IExperienciaRepository iexperienciaRepository;
-   
 
     public List<Experiencia> list() {
         return iexperienciaRepository.findAll();
@@ -44,22 +43,4 @@ public class ImpExperienciaService {
         return iexperienciaRepository.existsByNombreExp(nombreExp);
     }
 
-    /*  @Override
-    public Experiencia updateExperiencia(Experiencia experiencia, Long idExp) {
-
-        return iexperienciaRepository.findById(idExp).map(experiencia -> {
-            experiencia.setNombreExp(experienciadto.getNombreExp());
-            experiencia.setLugarExp(experienciadto.getLugarExp());
-            experiencia.setFechaExp(experienciadto.getFechaExp());
-            experiencia.setDescripcionExp(experienciadto.getDescripcionExp());
-
-            return mapperExperienciaDTO.convertToDto(iexperienciaRepository.save(experiencia));
-
-        }).orElseGet(() -> {
-            Experiencia newExperiencia = mapperExperienciaDTO.convertToEntity(experienciadto);
-            newExperiencia.setIdExp(idExp);
-            return mapperExperienciaDTO.convertToDto(this.iexperienciaRepository.save(newExperiencia));
-        });
-    }
-     */
 }

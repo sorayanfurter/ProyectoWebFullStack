@@ -1,7 +1,6 @@
 package com.portfolio.sorayafp.Controller;
 
 import com.portfolio.sorayafp.DTOs.ExperienciaDTO;
-
 import com.portfolio.sorayafp.Entity.Experiencia;
 import com.portfolio.sorayafp.Security.Controller.Mensaje;
 import com.portfolio.sorayafp.Service.ImpExperienciaService;
@@ -37,12 +36,12 @@ public class ExperienciaController {
     @PostMapping("/crear")
 
     public ResponseEntity<?> addExperiencia(@RequestBody ExperienciaDTO experienciadto) {
-      /*  if (StringUtils.isBlank(experienciadto.getNombreExp())) {
+        if (experienciadto.getNombreExp()==null) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         if (impExpService.existsByNombre(experienciadto.getNombreExp())) {
             return new ResponseEntity(new Mensaje("Experiencia existente"), HttpStatus.BAD_REQUEST);
-        }*/
+        }
         Experiencia experiencia = new Experiencia(experienciadto.getNombreExp(), experienciadto.getLugarExp(), experienciadto.getFechaExp(), experienciadto.getDescripcionExp());
         impExpService.saveExperiencia(experiencia);
 

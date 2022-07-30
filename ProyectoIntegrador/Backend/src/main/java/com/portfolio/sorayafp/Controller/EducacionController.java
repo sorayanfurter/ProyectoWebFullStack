@@ -5,7 +5,6 @@ import com.portfolio.sorayafp.Entity.Educacion;
 import com.portfolio.sorayafp.Security.Controller.Mensaje;
 import com.portfolio.sorayafp.Service.ImpEducacionService;
 import java.util.List;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -40,12 +37,12 @@ public class EducacionController {
     @PostMapping("/crear")
 
     public ResponseEntity<?> addEducacion(@RequestBody EducacionDTO educaciondto) {
-       /* if (StringUtils.isBlank(educaciondto.getNombreEdu())) {
+        if (educaciondto.getNombreEdu() == null) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         if (impEduService.existsByNombre(educaciondto.getNombreEdu())) {
             return new ResponseEntity(new Mensaje("Educacion existente"), HttpStatus.BAD_REQUEST);
-        }*/
+        }
         Educacion educacion = new Educacion(educaciondto.getNombreEdu(), educaciondto.getLugarEdu(), educaciondto.getFechaEdu(), educaciondto.getDescripcionEdu());
         impEduService.saveEducacion(educacion);
 

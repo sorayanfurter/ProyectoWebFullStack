@@ -5,7 +5,6 @@ import com.portfolio.sorayafp.Entity.Proyecto;
 import com.portfolio.sorayafp.Security.Controller.Mensaje;
 import com.portfolio.sorayafp.Service.ImpProyectoService;
 import java.util.List;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,7 +38,7 @@ public class ProyectoController {
     @PostMapping("/crear")
 
     public ResponseEntity<?> addProyecto(@RequestBody ProyectoDTO proyectodto) {
-        if (StringUtils.isBlank(proyectodto.getNombreProyecto())) {
+        if (proyectodto.getNombreProyecto() ==null) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         if (impProyectoService.existsByNombre(proyectodto.getNombreProyecto())) {
@@ -93,38 +92,4 @@ public class ProyectoController {
         return new ResponseEntity(proyecto, HttpStatus.OK);
     }
 
-    /*   @Autowired IProyectoService iproyectoService;
-    
- @GetMapping("/listar") 
- @ResponseBody
- 
-  public List<ProyectoDTO>findAll(){
-     return  iproyectoService.findAll();
-    
-  } 
-    
- @PostMapping("/crear")
- 
-  public String saveProyecto(@RequestBody ProyectoDTO proyectodto){
-   iproyectoService.saveProyecto(proyectodto);
-   return "Proyecto creado correctamente";
-     
-  }
-  
- @DeleteMapping ("/borrar/{id}")
-      public void deleteProyecto(@PathVariable Long id){
-      iproyectoService.deleteProyecto(id); 
-      
-    }    
-      
- @GetMapping("/listar/{id}")
-      public ProyectoDTO findByIdProyecto(@PathVariable Long id) {
-         return iproyectoService.findByIdProyecto(id);
-	} 
-        
- @PutMapping ("/editar/{id}")
-     public ProyectoDTO updateProyecto(@RequestBody ProyectoDTO newProyecto , @PathVariable Long id){
-         return iproyectoService.updateProyecto (newProyecto, id);      
-    }     
-     */
 }

@@ -46,59 +46,6 @@ public class ImpProyectoService {
     public boolean existsByNombre(String nombreProyecto) {
         return iproyectoRepository.existsByNombreProyecto(nombreProyecto);
     } 
-    
-  
-  /*
-    @Override
-    public List<ProyectoDTO> findAll() {
-        
-       return iproyectoRepository.findAll()       
-       .stream().map(x -> mapperProyectoDTO.convertToDto(x)).collect(Collectors.toList());
-				        
-    }
-    
-    @Override
-              
-    public ProyectoDTO saveProyecto(ProyectoDTO proyectodto) {
-    Proyecto proyecto = mapperProyectoDTO.convertToEntity(proyectodto);
-        proyecto = iproyectoRepository.save(proyecto);
-        return mapperProyectoDTO.convertToDto(proyecto);
-       
-    }  
-       
-    @Override
-    public void deleteProyecto(Long id) {
-        iproyectoRepository.deleteById(id);
-    }
-    
-    
-    @Override
-    public ProyectoDTO findByIdProyecto(Long id){
-        Proyecto proyecto = this.iproyectoRepository.findById(id).get();
-        
-		return mapperProyectoDTO.convertToDto(proyecto);
-    }
-  
-       
-    @Override
-    public ProyectoDTO updateProyecto (ProyectoDTO proyectodto, Long id){
-       
-	return iproyectoRepository.findById(id).map(proyecto -> {
-	 proyecto.setNombreProyecto(proyectodto.getNombreProyecto());
-         proyecto.setLugarProyecto(proyectodto.getLugarProyecto());
-         proyecto.setFechaProyecto(proyectodto.getFechaProyecto());
-         proyecto.setImgProyecto(proyectodto.getImgProyecto());
-         proyecto.setDescripcionProyecto(proyectodto.getDescripcionProyecto());
-         
-         
-	return mapperProyectoDTO.convertToDto(iproyectoRepository.save(proyecto));
-         
-       }).orElseGet(() -> {
-           Proyecto newProyecto = mapperProyectoDTO.convertToEntity(proyectodto);
-           newProyecto.setIdProyecto(id);
-           return mapperProyectoDTO.convertToDto(this.iproyectoRepository.save(newProyecto));
-       });
-    }  
-    */
+
     
 }

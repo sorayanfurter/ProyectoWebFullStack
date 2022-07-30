@@ -2,7 +2,6 @@ package com.portfolio.sorayafp.Controller;
 
 import com.portfolio.sorayafp.DTOs.UsuarioDTO;
 import com.portfolio.sorayafp.Entity.Usuario;
-import com.portfolio.sorayafp.Interface.IUsuarioService;
 import com.portfolio.sorayafp.Repository.IUsuarioRepository;
 import com.portfolio.sorayafp.Security.Controller.Mensaje;
 import com.portfolio.sorayafp.Service.ImpUsuarioService;
@@ -77,7 +76,7 @@ public class UsuarioController {
         return new ResponseEntity(usuario, HttpStatus.OK);
     }
 
-  /*  @PostAuthorize("hasRole('ADMIN')")*/
+   
     @PutMapping("/editar/{id}")
 
     public ResponseEntity<?> updateUsuario(@RequestBody UsuarioDTO usuariodto, @PathVariable Long id) {

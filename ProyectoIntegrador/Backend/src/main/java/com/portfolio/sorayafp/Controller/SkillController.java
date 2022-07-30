@@ -35,7 +35,7 @@ public class SkillController {
         List<Skill> list = impSkillService.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
-    
+
     @PostMapping("/crear")
 
     public ResponseEntity<?> addSkill(@RequestBody SkillDTO skilldto) {
@@ -55,19 +55,19 @@ public class SkillController {
     @PutMapping("/editar/{id}")
 
     public ResponseEntity<?> updateSkill(@RequestBody SkillDTO skilldto, @PathVariable int id) {
-      /*  if (!impSkillService.existsById(id)) {
+        if (!impSkillService.existsById(id)) {
             return new ResponseEntity(new Mensaje("ID inexistente"), HttpStatus.BAD_REQUEST);
         }
 
         if (skilldto.getNombreSkill() == null) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        }*/
+        }
 
         Skill skill = impSkillService.getOne(id).get();
         skill.setNombreSkill(skilldto.getNombreSkill());
         skill.setImgSkill(skilldto.getImgSkill());
         skill.setPorcentajeSkill(skilldto.getPorcentajeSkill());
-                impSkillService.saveSkill(skill);
+        impSkillService.saveSkill(skill);
         return new ResponseEntity(new Mensaje("Skill actualizada"), HttpStatus.OK);
     }
 
@@ -90,33 +90,5 @@ public class SkillController {
         Skill skill = impSkillService.getOne(id).get();
         return new ResponseEntity(skill, HttpStatus.OK);
     }
-
-    
-    
-    
-/*
-    @PostMapping("/crear")
-
-    public String saveSkill(@RequestBody SkillDTO skilldto) {
-        iskillService.saveSkill(skilldto);
-        return "Skill creada correctamente";
-
-    }
-
-    @DeleteMapping("/borrar/{id}")
-    public void deleteSkill(@PathVariable Long id) {
-        iskillService.deleteSkill(id);
-
-    }
-
-    @GetMapping("/listar/{id}")
-    public SkillDTO findByIdSkill(@PathVariable Long id) {
-        return iskillService.findByIdSkill(id);
-    }
-
-    @PutMapping("/editar/{id}")
-    public SkillDTO updateSkill(@RequestBody SkillDTO newSkill, @PathVariable Long id) {
-        return iskillService.updateSkill(newSkill, id);
-    }*/
 
 }

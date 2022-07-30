@@ -21,10 +21,7 @@ public class Educacion implements Serializable {
     private String fechaEdu;
     private String descripcionEdu;
 
-    /* @JsonBackReference
-   @ManyToOne(fetch=FetchType.LAZY)
-   @JoinColumn(name="usuario_idUsuario")
-   private Usuario usuario;*/
+   
 
     public Educacion(String nombreEdu, String lugarEdu, String fechaEdu, String descripcionEdu) {
 
@@ -32,7 +29,7 @@ public class Educacion implements Serializable {
         this.lugarEdu = lugarEdu;
         this.fechaEdu = fechaEdu;
         this.descripcionEdu = descripcionEdu;
-        /* this.usuario = usuario;*/
+       
     }
 
     public Educacion() {
