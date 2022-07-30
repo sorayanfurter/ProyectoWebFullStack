@@ -1,47 +1,60 @@
-
 <body>
 
-<!--FOTO PERFIL-->
+  <!--BANNER-->
 
-<div id="layout">
-    
-      <div class="row">
-        <div class="col-md-12 text-center ">
-    <div text-center id="foto-perfil">
-      <img src="/assets/imgs/foto-perfil.png" class="img-fluid" alt="">
+  <section id="banner">
+    <img [innerHTML] src="{{usuario.imgBanner}}" width="100%" alt="40px" height="300px">
+  </section>
+
+
+  <!--FOTO PERFIL-->
+
+  <div id="layout">
+
+    <div class="row">
+      <div class="col-md-12 text-center ">
+        <div text-center >
+          <img id="fotoperfil" src="{{usuario.fotoPerfil}}" class="img-fluid" >
+        </div>
+      </div>
     </div>
-        </div>
-      </div>
-   
 
-<!--DATOS-->
-    
-      <div class="row" id="datos-ppales">
-        <div class="col-md-12 text-center ">
-          <h1><strong>SORAYA FERULANO PAEZ</strong></h1>
-          <h5>Full Stack Developer Jr.</h5>
-        </div> 
-        <div class="container text-center">
-            <img src="/assets/imgs/star.png" alt="60" width="10%" text-center>
-        </div>
+
+    <!--DATOS-->
+
+    <div class="row" id="datos-ppales">
+      <div class="col-md-12 text-center ">
+        <h1><strong>{{usuario.nombre}} {{usuario.apellido}}</strong></h1>
+        <h4>{{usuario.titulo}}</h4>
       </div>
-    
-          
-  <div class="container">
+      <div class="container text-center">
+        <img src="/assets/imgs/star.png" alt="60" width="10%" text-center>
+      </div>
+    </div>
+
+
+    <div class="container">
       <div class="row text-center">
         <div class="col-md-12 ">
-            <div id="acercademi" text-left >
-                <h2>Acerca de mi</h2> 
-            </div>
-          <div class="border border-dark">
-             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia est pariatur necessitatibus ipsa excepturi vel explicabo illo dolore, autem maiores magni, quaerat architecto quidem quae fugit nesciunt recusandae neque asperiores!</p>
+          <div id="acercademi" text-left>
+
+            <h2>Acerca de mi</h2>
           </div>
-          
-          
-        </div> 
+          <div class="col-md-12" id="boton">
+            <button class="btn-btn-dark" routerLink="/editusuario/{{usuario.idUsuario}}" *ngIf="isLogged"><i
+                class="bi bi-pencil-square"></i></button>
+          </div>
+          <div class="border border-dark">
+            <p>{{usuario.descripcion}}</p>
+          </div>
+
+
+        </div>
       </div>
     </div>
-  
-</div> 
 
-  </body>
+  </div>
+
+
+
+</body>

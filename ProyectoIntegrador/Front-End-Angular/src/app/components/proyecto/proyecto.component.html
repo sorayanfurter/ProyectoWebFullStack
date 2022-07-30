@@ -1,0 +1,42 @@
+<div id="layout">
+    <div class="text-center">
+        <div class="text-center">
+            <img src="/assets/imgs/star.png" rounded mx-auto d-block alt="60" width="10%"
+                justify-content-center>
+        </div>
+        <h2>Proyectos</h2>
+    </div>
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-12 text-center">
+                <button type="button" class="btn-btn-dark" routerLink="/nuevoproyecto" *ngIf="isLogged" >
+                    Nuevo Proyecto
+                   </button>
+               
+                <div class="border border-dark ">
+
+                    <div id=proyectos class="col-sd-12 col-md-6 col-lg-3 parte1" *ngFor="let Proyecto of pro">
+                        <h4>{{Proyecto.nombreProyecto}}</h4>
+                        <h5>{{Proyecto.fechaProyecto}}</h5>
+                        <h5>{{Proyecto.lugarProyecto}}</h5>
+                        <p>{{Proyecto.descripcionProyecto}}</p>
+                        <img src="{{Proyecto.imgProyecto}}" width="100%" alt="" class="img-fluid img-proyecto">
+                        <button class="btn-btn-dark" *ngIf="isLogged" routerLink="/editpro/{{Proyecto.idProyecto}}"><i class="bi bi-pencil-square"></i></button>
+                        <button class="btn-btn-dark"  *ngIf="isLogged" (click)="delete(Proyecto.idProyecto)"> <i class="bi bi-x-circle-fill"></i></button>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="text-center">
+                <img src="/assets/imgs/star.png" rounded mx-auto d-block alt="60" width="10%" justify-content-center>
+            </div>
+        </div>
+
+
+       
+
+
+    </div>
+
