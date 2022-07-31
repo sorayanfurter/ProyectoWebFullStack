@@ -9,7 +9,7 @@ import { usuario } from '../model/usuario.model';
   providedIn: 'root'
 })
 export class UsuarioService {
-  URL = 'http://localhost:8080/usuario/';
+  URL = 'https://intense-dusk-90424.herokuapp.com/usuario/';
 
   constructor(private httpClient: HttpClient) {}
 

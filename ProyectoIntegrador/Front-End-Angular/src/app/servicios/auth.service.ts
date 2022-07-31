@@ -9,7 +9,7 @@ import { NuevoUsuariolog } from '../model/nuevo-usuariolog';
   providedIn: 'root'
 })
 export class AuthService {
-  authURL = 'http://localhost:8080/auth/';
+  authURL = 'https://intense-dusk-90424.herokuapp.com/auth/';
 
   constructor(private httpClient: HttpClient) { }
 

@@ -7,7 +7,7 @@ import { Skill } from "../model/skill";
     providedIn: 'root'
   })
   export class ImpSkillServiceService {
-  skillURL = 'http://localhost:8080/skill/'
+  skillURL = 'https://intense-dusk-90424.herokuapp.com/skill/'
 
   constructor( private httpClient: HttpClient) { }
 
